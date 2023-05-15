@@ -129,89 +129,6 @@
 <script type="text/javascript" src="https://lpmedia.servefilesonly.com/js/popwin.js?1043963"></script>
 
 
-<script>
- jQuery(document).ready(function () {
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const pathName = window.location.pathname.replace("/landing/", '');
-    const cmsId = urlParams.get('cmsid');
-    const campaign = urlParams.get('name');
-    let isMlp = false;
-
-    if (cmsId != null) {
-        const mlp = cmsId.split("--")[1];
-
-        if (mlp == pathName) {
-            isMlp = true;
-        }
-
-    }
-
-    if (isMlp) {
-
-        var popTrigger = 0;
-
-        var testpop = function (site) {
-
-            if (popTrigger < 1) {
-
-                popTrigger++;
-
-                window.open(site);
-
-                var interval = 500;
-                window.setTimeout(function () {
-
-                    window.location.href = "https://trk.ezymny.com/abfdc5db-586e-4d84-9b73-774e3e792124?o=2741&subPublisher={affiliate_id}&clicktag={unique_clickid}" + campaign;
-                }, interval);
-            }
-        };
-
-
-        function checkADNPOP(name, callback) {
-            var interval = 500;
-            window.setTimeout(function () {
-                callback(window[name]);
-                window.setTimeout(checkADNPOP, interval, name, callback);
-            }, interval);
-        }
-
-        checkADNPOP("ADNPOP", function () {
-
-            jQuery(function () {
-
-                $("a").each(function (index) {
-
-                    if ($(this).attr('href') !== undefined) {
-
-                        if ($(this).attr('href').indexOf("landing/") !== -1) {
-
-                            $(this).unbind('click').bind('click', function (e) {
-
-                                e.preventDefault();
-
-                                if (e.target.href) {
-                                    testpop(e.target.href);
-                                } else {
-                                    testpop(e.currentTarget.href);
-                                }
-
-                            });
-
-                        }
-
-                    }
-
-                });
-
-            });
-
-        });
-    }
-
-});
-</script>
 <script type="text/javascript">
     $(document).ready(function () {
                 Popwin.width = 425;
@@ -222,33 +139,7 @@
         Popwin.initialize();
     });
 </script>
-<script>
-    function populateLinks(linkToPopulate) {
-        let queryString = window.location.search.substring(0);
-        let links = document.getElementsByTagName("a");
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].href === linkToPopulate) {
 
-                if ("/landing/cyoa8001" !== 'null') {
-                    links[i].href = "/landing/cyoa8001" + queryString;
-                } else {
-                    links[i].href = linkToPopulate + queryString;
-                }
-            } else {
-                let newLink = links[i].href.substring(0, links[i].href.lastIndexOf('/'));
-                let newLinkToPopulate = linkToPopulate.substring(0, linkToPopulate.lastIndexOf('/'));
-
-                if (newLink === newLinkToPopulate) {
-
-                                            links[i].href = links[i].href + queryString;
-                    
-                }
-            }
-        }
-    }
-
-    populateLinks("");
-</script>
 <script>
                     $(function() {
                                 let listGirls = [{"imgName":"{{ media_map_avatar_1 }}","videoName":"{{ media_map_video_1 }}","nameAge":"Anna-97 (24)","imgUrl":"https:\/\/imedia.servefilesonly.com\/844655f4-239b-4b60-8cf7-dd0dda7145b9.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/3f10a154-3561-4fd3-b7bb-ea54454a3204.mp4?1043963"},{"imgName":"{{ media_map_avatar_2 }}","videoName":"{{ media_map_video_2 }}","nameAge":"Anna-kukl (23)","imgUrl":"https:\/\/imedia.servefilesonly.com\/a571a52d-2dbd-47a4-bb72-6ec0b24d86a6.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/290cfdc1-2cef-4cec-ad6c-f34b186d1c14.mp4?1043963"},{"imgName":"{{ media_map_avatar_3 }}","videoName":"{{ media_map_video_3 }}","nameAge":"Anna4Friends (30)","imgUrl":"https:\/\/imedia.servefilesonly.com\/db654bd7-0f0d-4a72-aff9-e87686b622eb.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/6ba399a3-75c9-46aa-8c12-a708cfc0061c.mp4?1043963"},{"imgName":"{{ media_map_avatar_4 }}","videoName":"{{ media_map_video_4 }}","nameAge":"Anniika (20)","imgUrl":"https:\/\/imedia.servefilesonly.com\/f870d72d-d419-4133-8f1f-ab075569ec1c.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/405337a6-5a06-4e84-82e5-df7ee8151d8a.mp4?1043963"},{"imgName":"{{ media_map_avatar_5 }}","videoName":"{{ media_map_video_5 }}","nameAge":"BaywatchXXX (30)","imgUrl":"https:\/\/imedia.servefilesonly.com\/8f902792-3870-46cb-aa6f-ab32e65d8fc8.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/90b60e61-6723-4999-b470-6bc61c2d01f2.mp4?1043963"},{"imgName":"{{ media_map_avatar_6 }}","videoName":"{{ media_map_video_6 }}","nameAge":"Beachschnecke (39)","imgUrl":"https:\/\/imedia.servefilesonly.com\/082c5a82-6281-4fc2-86ac-ad11b4328d8e.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/8656c81d-7de4-4efd-806a-247f337bca76.mp4?1043963"},{"imgName":"{{ media_map_avatar_7 }}","videoName":"{{ media_map_video_7 }}","nameAge":"Billy-hot (43)","imgUrl":"https:\/\/imedia.servefilesonly.com\/367768f0-8e2a-4fed-80bb-48956ed46447.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/44f107bc-d35a-45b7-b0db-68cf4a68c1ed.mp4?1043963"},{"imgName":"{{ media_map_avatar_8 }}","videoName":"{{ media_map_video_8 }}","nameAge":"Blonde-Suzie (23)","imgUrl":"https:\/\/imedia.servefilesonly.com\/9972377e-a2f6-4f95-b256-e91763d27473.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/90c17e00-50fa-4101-854c-9eab1365e30b.mp4?1043963"},{"imgName":"{{ media_map_avatar_9 }}","videoName":"{{ media_map_video_9 }}","nameAge":"Blondie_Rocks (36)","imgUrl":"https:\/\/imedia.servefilesonly.com\/6542a3fb-c0ba-4519-911d-c6b2debe6d4b.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/65050dc3-7a07-4ab7-82bd-098d24d19b43.mp4?1043963"},{"imgName":"{{ media_map_avatar_10 }}","videoName":"{{ media_map_video_10 }}","nameAge":"Bluemchen69 (20)","imgUrl":"https:\/\/imedia.servefilesonly.com\/806361b5-e29a-4ebc-8599-ca7f3fbdd923.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/2bce86ee-5c1f-4b2b-b39d-4e42db36f219.mp4?1043963"},{"imgName":"{{ media_map_avatar_11 }}","videoName":"{{ media_map_video_11 }}","nameAge":"BOBByBro (30)","imgUrl":"https:\/\/imedia.servefilesonly.com\/2587099a-0632-4df7-b6a9-d5213391843b.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/df493ada-08f2-4ac6-9c0d-d0445739a109.mp4?1043963"},{"imgName":"{{ media_map_avatar_12 }}","videoName":"{{ media_map_video_12 }}","nameAge":"Cherry-Blond (22)","imgUrl":"https:\/\/imedia.servefilesonly.com\/76e90902-7dea-4e02-8e2c-03f58845a27b.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/f02d099c-3459-4950-806b-e29b5e8f85f4.mp4?1043963"},{"imgName":"{{ media_map_avatar_13 }}","videoName":"{{ media_map_video_13 }}","nameAge":"ConnyXXX  (36)","imgUrl":"https:\/\/imedia.servefilesonly.com\/b31bb257-da80-435d-9689-15e0e48e4302.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/3af5cc64-d956-4709-b33f-7cab25f66395.mp4?1043963"},{"imgName":"{{ media_map_avatar_14 }}","videoName":"{{ media_map_video_14 }}","nameAge":"Deine_Stella (27)","imgUrl":"https:\/\/imedia.servefilesonly.com\/c61ad598-6ef7-468f-baec-f96d5e1577e8.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/632cdc9e-c19e-4696-be26-3ab14af7c472.mp4?1043963"},{"imgName":"{{ media_map_avatar_15 }}","videoName":"{{ media_map_video_15 }}","nameAge":"DieMegaBombe (26)","imgUrl":"https:\/\/imedia.servefilesonly.com\/825e0754-8584-453a-b9e6-2da3def415b7.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/d7f650bd-b7b2-4bcd-8938-b8ec7320413a.mp4?1043963"},{"imgName":"{{ media_map_avatar_16 }}","videoName":"{{ media_map_video_16 }}","nameAge":"Ekatarina-P (22)","imgUrl":"https:\/\/imedia.servefilesonly.com\/5f848bea-8cd0-41d0-8dd8-663d886c9821.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/8ef6a495-4ef8-4351-a9e2-959e00cb9063.mp4?1043963"},{"imgName":"{{ media_map_avatar_17 }}","videoName":"{{ media_map_video_17 }}","nameAge":"Emily-Shina (31)","imgUrl":"https:\/\/imedia.servefilesonly.com\/a492fa87-ed72-4aea-b4a0-ce6f88a5c92c.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/faddad5a-3b60-490d-9a1b-716de55492ad.mp4?1043963"},{"imgName":"{{ media_map_avatar_18 }}","videoName":"{{ media_map_video_18 }}","nameAge":"forbidden_fruit (24)","imgUrl":"https:\/\/imedia.servefilesonly.com\/81c68df7-e74f-433f-8b8e-bfb0f207d28a.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/17353be8-4b08-4282-987b-ef4fd28c2670.mp4?1043963"},{"imgName":"{{ media_map_avatar_19 }}","videoName":"{{ media_map_video_19 }}","nameAge":"Foxy-Brown (38)","imgUrl":"https:\/\/imedia.servefilesonly.com\/29e5eaf2-1b39-4514-a33b-8700a9bb6e7f.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/cf7599e8-3719-4cdb-bd49-81e5c31f35c6.mp4?1043963"},{"imgName":"{{ media_map_avatar_20 }}","videoName":"{{ media_map_video_20 }}","nameAge":"Hannah-Ja (25)","imgUrl":"https:\/\/imedia.servefilesonly.com\/3efa76c7-3f91-4d6d-8185-fc78ab4c493d.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/c44d86fc-c511-4c51-bd95-35d40862ed89.mp4?1043963"},{"imgName":"{{ media_map_avatar_21 }}","videoName":"{{ media_map_video_21 }}","nameAge":"Heimlich_hier (22)","imgUrl":"https:\/\/imedia.servefilesonly.com\/af976962-dfff-4002-9055-28894eb7a5a7.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/0b264ddd-a049-416b-b060-1a7dfb8ae8d5.mp4?1043963"},{"imgName":"{{ media_map_avatar_22 }}","videoName":"{{ media_map_video_22 }}","nameAge":"J_inLove (22)","imgUrl":"https:\/\/imedia.servefilesonly.com\/4fafc80e-c7f9-4688-acf8-02d704d4cbe9.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/798cb4b9-86f7-4138-8d8b-11a661c98ef2.mp4?1043963"},{"imgName":"{{ media_map_avatar_23 }}","videoName":"{{ media_map_video_23 }}","nameAge":"Janny_LoL (23)","imgUrl":"https:\/\/imedia.servefilesonly.com\/bcfe691f-15b9-4f9f-a9f0-239f1353f90c.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/1c38af82-e213-4c37-be3d-80d8473b175a.mp4?1043963"},{"imgName":"{{ media_map_avatar_24 }}","videoName":"{{ media_map_video_24 }}","nameAge":"Jasminchen69 (23)","imgUrl":"https:\/\/imedia.servefilesonly.com\/b7e2b3f0-fe30-4dc7-a21d-a0c1a5dc731f.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/8fc3e73b-f45e-4660-884e-65b2892c3669.mp4?1043963"},{"imgName":"{{ media_map_avatar_25 }}","videoName":"{{ media_map_video_25 }}","nameAge":"Jeanett1848 (26)","imgUrl":"https:\/\/imedia.servefilesonly.com\/037c35b9-54bf-433a-91ae-3b0b6e80831d.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/b4b20a14-091b-491f-b787-81d067987d09.mp4?1043963"},{"imgName":"{{ media_map_avatar_26 }}","videoName":"{{ media_map_video_26 }}","nameAge":"Jenna-121 (23)","imgUrl":"https:\/\/imedia.servefilesonly.com\/001d9fad-c676-44b1-9f33-5938f65dd455.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/bdf39df4-eab3-4160-9179-c1def6aef6d7.mp4?1043963"},{"imgName":"{{ media_map_avatar_27 }}","videoName":"{{ media_map_video_27 }}","nameAge":"Jenna-Lex (45)","imgUrl":"https:\/\/imedia.servefilesonly.com\/d44a4445-1a4b-4e3c-b35c-1f8aba63665e.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/e6f0a738-ae27-405d-b2e2-0fbc098c4d9d.mp4?1043963"},{"imgName":"{{ media_map_avatar_28 }}","videoName":"{{ media_map_video_28 }}","nameAge":"Laura-Milf (47)","imgUrl":"https:\/\/imedia.servefilesonly.com\/1a5c9f33-0726-4ccd-b089-7e65b71a0a4c.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/12fc94e5-152c-499a-a424-a6dd680e2fcc.mp4?1043963"},{"imgName":"{{ media_map_avatar_29 }}","videoName":"{{ media_map_video_29 }}","nameAge":"LaurenSommer (28)","imgUrl":"https:\/\/imedia.servefilesonly.com\/a3abefca-8c51-4ad5-82c3-c0b997749a60.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/442ec926-0b19-49aa-8460-9a1505057663.mp4?1043963"},{"imgName":"{{ media_map_avatar_30 }}","videoName":"{{ media_map_video_30 }}","nameAge":"LaurieStar (28)","imgUrl":"https:\/\/imedia.servefilesonly.com\/84a0bad2-2498-4b2c-9b2c-5ad7b257c081.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/f23d1f41-d7f5-4104-9f7d-b8bc2fd85a74.mp4?1043963"},{"imgName":"{{ media_map_avatar_31 }}","videoName":"{{ media_map_video_31 }}","nameAge":"Leckerlia (30)","imgUrl":"https:\/\/imedia.servefilesonly.com\/f11125cb-4559-4f32-bd1c-b2ad6783e5ec.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/fffb814b-189f-4899-a0f8-1f0ea4e9a0f6.mp4?1043963"},{"imgName":"{{ media_map_avatar_32 }}","videoName":"{{ media_map_video_32 }}","nameAge":"Lennja (35)","imgUrl":"https:\/\/imedia.servefilesonly.com\/76a3004a-d228-43ce-b57f-a2cb6033eb78.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/9d1d7b1c-dae4-4188-af10-ac312e0e1900.mp4?1043963"},{"imgName":"{{ media_map_avatar_33 }}","videoName":"{{ media_map_video_33 }}","nameAge":"Leonie-Chili (37)","imgUrl":"https:\/\/imedia.servefilesonly.com\/17f12f97-1f1c-4d4a-abe5-ff9368bd8e18.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/c167bbf2-e893-469b-9aa1-c23e96828939.mp4?1043963"},{"imgName":"{{ media_map_avatar_34 }}","videoName":"{{ media_map_video_34 }}","nameAge":"LoveSexAngel (26)","imgUrl":"https:\/\/imedia.servefilesonly.com\/80695f69-87db-49b3-b06c-a17afb436448.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/005157ca-a94c-4e18-828d-7a99a665c16f.mp4?1043963"},{"imgName":"{{ media_map_avatar_35 }}","videoName":"{{ media_map_video_35 }}","nameAge":"New_Candice (29)","imgUrl":"https:\/\/imedia.servefilesonly.com\/52239a6f-2396-4871-afc8-fa05010c80e9.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/5be3a127-41dc-434b-bf91-327416ac841f.mp4?1043963"},{"imgName":"{{ media_map_avatar_36 }}","videoName":"{{ media_map_video_36 }}","nameAge":"Pure_Lust69(25)","imgUrl":"https:\/\/imedia.servefilesonly.com\/575641fc-1a90-41ef-a749-816ce1ee8d07.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/30648ca7-23cf-45f3-84ad-61c2d53e087b.mp4?1043963"},{"imgName":"{{ media_map_avatar_37 }}","videoName":"{{ media_map_video_37 }}","nameAge":"Reiterin_Rita (25)","imgUrl":"https:\/\/imedia.servefilesonly.com\/686dcdb3-2d3f-48e3-83e3-c2c40a204581.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/985cef70-d5a4-4ac9-835d-bd05294462bf.mp4?1043963"},{"imgName":"{{ media_map_avatar_38 }}","videoName":"{{ media_map_video_38 }}","nameAge":"SexyJanina (47)","imgUrl":"https:\/\/imedia.servefilesonly.com\/c8319dbb-69d8-47a4-9cab-96279f81aebf.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/b133ca6d-cd46-4186-87c8-38ac2e76a6aa.mp4?1043963"},{"imgName":"{{ media_map_avatar_39 }}","videoName":"{{ media_map_video_39 }}","nameAge":"Steffi-Bee (27)","imgUrl":"https:\/\/imedia.servefilesonly.com\/c10d0c77-bab0-406e-9265-0b22b031059c.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/56adee0f-4cfe-40c6-a304-00f84f46d77a.mp4?1043963"},{"imgName":"{{ media_map_avatar_40 }}","videoName":"{{ media_map_video_40 }}","nameAge":"Sweet-Tessa (27)","imgUrl":"https:\/\/imedia.servefilesonly.com\/282e9806-1713-4eb8-a64a-6a8d5d522710.jpg?1043963","videoUrl":"https:\/\/imedia.servefilesonly.com\/c8158a00-c936-4b10-8d56-a25b0913504b.mp4?1043963"}];
